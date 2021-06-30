@@ -53,7 +53,7 @@ class CreateAccountVC: UIViewController {
         emailErrorLbl.isHidden = isValidEmail
     }
     
-    
+    				
     @IBAction func passTFChanged(_ sender: UITextField) {
         guard let pass = sender.text else {return}
         passwordStrength = VerificationServices.isValidPassword(pass: pass)
