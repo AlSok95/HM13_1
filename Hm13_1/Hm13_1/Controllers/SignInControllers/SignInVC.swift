@@ -10,6 +10,9 @@ import UIKit
 class SignInVC: UIViewController {
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passTF: UITextField!
+    @IBOutlet weak var userErrorLbl: UILabel!
+    @IBOutlet weak var signInOutlet: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +31,24 @@ class SignInVC: UIViewController {
     }
     */
     
-    
-    @IBAction func emailTFChanged(_ sender: UITextField) {
+    @IBAction func signInTapped() {
+        guard let email = emailTF.text,
+             
+              let pass = passTF.text else {return}
+        if checkUser(email:email, pass:pass){
+            print("GOOOOOOOOO!!!")
+        }
     }
     
-    @IBAction func passTFChanged(_ sender: UITextField) {
+    private func checkUser(email:String, pass:String)-> Bool{
+        
+        let passSaved = UserDefaults.standard.object(forKey: Constants.pass) as! String
+        let emailSaved = UserDefaults.standard.object(forKey: Constants.email) as! String
+        let userFound = (email == emailSaved) && (pass == passSaved)
+        userErrorLbl.isHidden = userFound
+        return userFound
+        
     }
-    
-}
+        
+    }
+

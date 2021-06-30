@@ -316,22 +316,55 @@
                     <navigationItem key="navigationItem" id="Wlh-YI-umL"/>
                     <connections>
                         <outlet property="codeSecretLbl" destination="LE6-By-ckd" id="1E3-RZ-9vU"/>
-                        <segue destination="vhM-Jl-2h9" kind="show" identifier="1233231" id="dR9-mw-L50"/>
+                        <segue destination="vhM-Jl-2h9" kind="show" identifier="showWelcomeVC" id="dR9-mw-L50"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PT3-CQ-raX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1600" y="91"/>
         </scene>
-        <!--View Controller-->
+        <!--WelcomeVC-->
         <scene sceneID="FYM-r5-WGN">
             <objects>
-                <viewController id="vhM-Jl-2h9" sceneMemberID="viewController">
+                <viewController id="vhM-Jl-2h9" customClass="WelcomeVC" customModule="Hm13_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3fM-Wb-vnA">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83U-mq-Ybs">
+                                <rect key="frame" x="50" y="100" width="328" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your are signed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5f-Yf-Qhv">
+                                <rect key="frame" x="50" y="242" width="328" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAM-7j-vEu">
+                                <rect key="frame" x="100" y="741" width="228" height="47"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <state key="normal" title="Continue"/>
+                                <connections>
+                                    <action selector="continueBtnTapped" destination="vhM-Jl-2h9" eventType="touchUpInside" id="b9x-pN-aTe"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="VXW-bZ-7yp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kAM-7j-vEu" firstAttribute="leading" secondItem="VXW-bZ-7yp" secondAttribute="leading" constant="100" id="6rL-ut-w9z"/>
+                            <constraint firstItem="VXW-bZ-7yp" firstAttribute="bottom" secondItem="kAM-7j-vEu" secondAttribute="bottom" constant="50" id="Cs1-SN-Oge"/>
+                            <constraint firstItem="VXW-bZ-7yp" firstAttribute="trailing" secondItem="kAM-7j-vEu" secondAttribute="trailing" constant="100" id="I1l-Kv-hs5"/>
+                            <constraint firstItem="I5f-Yf-Qhv" firstAttribute="top" secondItem="83U-mq-Ybs" secondAttribute="bottom" constant="100" id="NHg-Po-7qd"/>
+                            <constraint firstItem="83U-mq-Ybs" firstAttribute="top" secondItem="VXW-bZ-7yp" secondAttribute="top" constant="100" id="Rce-BL-WI3"/>
+                            <constraint firstItem="VXW-bZ-7yp" firstAttribute="trailing" secondItem="I5f-Yf-Qhv" secondAttribute="trailing" constant="50" id="Vi2-UA-3Ap"/>
+                            <constraint firstItem="83U-mq-Ybs" firstAttribute="leading" secondItem="VXW-bZ-7yp" secondAttribute="leading" constant="50" id="jnu-1m-X7e"/>
+                            <constraint firstItem="I5f-Yf-Qhv" firstAttribute="leading" secondItem="VXW-bZ-7yp" secondAttribute="leading" constant="50" id="xfG-Hg-wnE"/>
+                            <constraint firstItem="VXW-bZ-7yp" firstAttribute="trailing" secondItem="83U-mq-Ybs" secondAttribute="trailing" constant="50" id="zeg-YH-AyL"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3wE-lc-fUl"/>
                 </viewController>
