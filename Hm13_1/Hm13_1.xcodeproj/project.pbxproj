@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95277F82268CFF0900DD79CC /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95277F81268CFF0900DD79CC /* WelcomeVC.swift */; };
+		95277F84268D050700DD79CC /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95277F83268D050700DD79CC /* Constans.swift */; };
+		95BE80C5268CE0B00064FD71 /* CodeVerifVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BE80C4268CE0B00064FD71 /* CodeVerifVC.swift */; };
 		95D9D7BB268791080044B3E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D9D7BA268791080044B3E4 /* AppDelegate.swift */; };
 		95D9D7BD268791080044B3E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D9D7BC268791080044B3E4 /* SceneDelegate.swift */; };
 		95D9D7C42687910B0044B3E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95D9D7C32687910B0044B3E4 /* Assets.xcassets */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95277F81268CFF0900DD79CC /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		95277F83268D050700DD79CC /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
+		95BE80C4268CE0B00064FD71 /* CodeVerifVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeVerifVC.swift; sourceTree = "<group>"; };
 		95D9D7B7268791080044B3E4 /* Hm13_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hm13_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D9D7BA268791080044B3E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95D9D7BC268791080044B3E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				95D9D7C32687910B0044B3E4 /* Assets.xcassets */,
+				95277F83268D050700DD79CC /* Constans.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -120,6 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				95D9D7DB2688742D0044B3E4 /* CreateAccountVC.swift */,
+				95BE80C4268CE0B00064FD71 /* CodeVerifVC.swift */,
+				95277F81268CFF0900DD79CC /* WelcomeVC.swift */,
 			);
 			path = SignUpControllers;
 			sourceTree = "<group>";
@@ -205,8 +214,11 @@
 			files = (
 				95D9D7BB268791080044B3E4 /* AppDelegate.swift in Sources */,
 				95F1AD552688D9F80020EF5D /* VerificationServices.swift in Sources */,
+				95277F84268D050700DD79CC /* Constans.swift in Sources */,
+				95BE80C5268CE0B00064FD71 /* CodeVerifVC.swift in Sources */,
 				95D9D7BD268791080044B3E4 /* SceneDelegate.swift in Sources */,
 				95D9D7DC2688742D0044B3E4 /* CreateAccountVC.swift in Sources */,
+				95277F82268CFF0900DD79CC /* WelcomeVC.swift in Sources */,
 				95D9D7DA2687AE0E0044B3E4 /* SignInVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

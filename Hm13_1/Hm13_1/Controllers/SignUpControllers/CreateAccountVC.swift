@@ -12,6 +12,8 @@ class CreateAccountVC: UIViewController {
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var emailErrorLbl: UILabel!
     
+    @IBOutlet weak var nameTF: UITextField!
+    
     @IBOutlet weak var passTF: UITextField!
     @IBOutlet weak var passErrorLbl: UILabel!
     
@@ -23,6 +25,7 @@ class CreateAccountVC: UIViewController {
     @IBOutlet weak var signUpBtn: UIButton!
     
     private var isValidEmail = false
+    private var isConfPass = false
     private var passwordStrength: PasswordStrength = .veryWeak
     
     
@@ -33,15 +36,24 @@ class CreateAccountVC: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+        guard let email = emailTF.text,
+              let name = nameTF.text ,
+              let pass = passTF.text,
+              let destVC = segue.destination as? CodeVerifVC
+
+        else {return}
+        destVC.name = name
+        destVC.email = email
+        destVC.pass = pass
+            
+        }
+    
+    
     @IBAction func signinButtonTouch() {
         navigationController?.popToRootViewController(animated: true)
     }
@@ -51,12 +63,13 @@ class CreateAccountVC: UIViewController {
         guard let email = sender.text else {return}
         isValidEmail = VerificationServices.isValidEmail(email: email)
         emailErrorLbl.isHidden = isValidEmail
+        updateBtnState()
     }
     
-    
+    				
     @IBAction func passTFChanged(_ sender: UITextField) {
-        guard let pass = sender.text else {return}
-        passwordStrength = VerificationServices.isValidPassword(pass: pass)
+        guard let pass1 = sender.text else {return}
+        passwordStrength = VerificationServices.isValidPassword(pass: pass1)
         passErrorLbl.isHidden = !(passwordStrength == .veryWeak)
         verifPassView.enumerated().forEach{ (index, view) in
             if (index <= (passwordStrength.rawValue - 1)){
@@ -64,12 +77,42 @@ class CreateAccountVC: UIViewController {
             } else {
                 view.alpha = 0.1
             }
-        }}
+        }
+        guard let pass2 = confPassTF.text else {return}
+        updatePassErrorLbl(pass1: pass1, pass2: pass2)
+       
+        
+        updateBtnState()
+    }
     
     @IBAction func confPassTFChanged(_ sender: UITextField) {
+        guard let pass1 = passTF.text,
+              let pass2 = sender.text else {return}
+        updatePassErrorLbl(pass1: pass1, pass2: pass2)
+      
+        
+        updateBtnState()
     }
     
     
     
+    private func updatePassErrorLbl(pass1:String,pass2:String){
+        isConfPass = VerificationServices.isPassCofirm(pass1: pass1, pass2: pass2)
+
+        confPassErrorLbl.isHidden =  isConfPass
+    }
+    
+    private func updateBtnState(){
+        signUpBtn.isEnabled = isValidEmail &&
+            isConfPass && (passwordStrength != .veryWeak)
+        
+    }
+    
+    
+    @IBAction func signUpTouch(_ sender: UIButton) {
+        performSegue(withIdentifier: "showCodeVerVC", sender: nil)
+    }
+   
 }
 
+	
