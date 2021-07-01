@@ -112,7 +112,7 @@ class CreateAccountVC: UIViewController {
     @IBAction func signUpTouch(_ sender: UIButton) {
         performSegue(withIdentifier: "showCodeVerVC", sender: nil)
     }
-    
+   
 }
 
 	

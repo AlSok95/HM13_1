@@ -12,6 +12,7 @@ class SignInVC: UIViewController {
     @IBOutlet weak var passTF: UITextField!
     @IBOutlet weak var userErrorLbl: UILabel!
     @IBOutlet weak var signInOutlet: UIButton!
+    private var isValidEmail = false
     
     
     override func viewDidLoad() {
@@ -38,6 +39,7 @@ class SignInVC: UIViewController {
         if checkUser(email:email, pass:pass){
             print("GOOOOOOOOO!!!")
         }
+        
     }
     
     private func checkUser(email:String, pass:String)-> Bool{
@@ -49,6 +51,16 @@ class SignInVC: UIViewController {
         return userFound
         
     }
+    private func ggggg (){
+        guard let em1 = emailTF.text
+        else{return}
+        isValidEmail = VerificationServices.isValidEmail(email: em1)
+        signInOutlet.isEnabled = isValidEmail
+        
+        
+        
+    }
+    
         
     }
 
